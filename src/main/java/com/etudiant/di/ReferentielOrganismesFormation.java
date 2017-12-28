@@ -26,7 +26,7 @@ public class ReferentielOrganismesFormation {
 				));
 		listeOrganismes.add(new OrganismeFormation("Mistra", 
 				Arrays.asList(
-						new Formation("Objective-C", 5, 4200f),
+						new Formation("Objective-C", 5, 2500f),
 						new Formation("C#", 5, 3000f)
 					)
 				));
@@ -36,7 +36,7 @@ public class ReferentielOrganismesFormation {
 	// Critère de recherche : le prix et la durée
 	public List<OrganismeFormation> trouver(Integer duree, Float prix) {
 		List<OrganismeFormation> liste = new ArrayList<OrganismeFormation>();
-		
+	
 		// Je passe par toutes la liste des organimes de formation
 		for( OrganismeFormation o : this.listeOrganismes) {
 			
@@ -49,7 +49,7 @@ public class ReferentielOrganismesFormation {
 				// Si je trouve une formation ayant le prix et la durée
 				// données, j'ajoute l'organisme dans la liste
 				// de retour et je passe à la liste suivante
-				if( f.getDuree() == duree && f.getPrix() == prix ) {
+				if( f.getDuree().equals(duree) && f.getPrix().equals(prix) ) {
 					liste.add(o);
 					break;
 				}
